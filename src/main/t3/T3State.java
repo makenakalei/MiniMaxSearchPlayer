@@ -97,8 +97,19 @@ public class T3State {
      * @return The map of legal actions to the next states that they lead.
      */
     public Map<T3Action,T3State> getTransitions () {
-        // [!] TODO
-        throw new UnsupportedOperationException();
+    	Map< T3Action, T3State> transitions  = new TreeMap<T3Action, T3State>();
+    	int [] moves = getMoves();
+    	for(int i = 0; i < 3; i++ ) { 
+    		for (int j = 0; j < 3; j++) {
+    			for (int move: moves) {
+    				T3Action next = new T3Action(j,i,move);
+    				if (isValidAction(next)) {
+    					transitions.put(next, getNextState(next));
+    				}
+    			}		
+    		}
+    	}
+        return transitions;
     }
     
     /**

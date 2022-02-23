@@ -28,7 +28,7 @@ public class T3Tests {
     // developing, just so you know whether or not you're
     // inefficient or bugged!
     @Rule
-    public Timeout globalTimeout = Timeout.seconds(8);
+	public Timeout globalTimeout = Timeout.seconds(8);
     
     // Grade record-keeping
     static int possible = 0, passed = 0;
