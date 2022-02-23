@@ -42,10 +42,10 @@ public class T3Player {
     		if(turn) {
     			return new actionScore(0, past.action);	
 				}
-    		}
-		    if(state.isTie()) {
-		    	return new actionScore(1, past.action);
-		    }
+    	}
+		if(state.isTie()) {
+		    return new actionScore(1, past.action);
+		}
     	if (turn) {
     		actionScore optimal = new actionScore(Integer.MIN_VALUE, null);
             Map<T3Action, T3State> transitions = state.getTransitions();
